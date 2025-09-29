@@ -1,0 +1,203 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFDD0; /* cream background */
+  color: #808000; /* olive text */
+}
+
+/* Custom utility classes */
+.text-olive-light {
+  color: #999900;
+}
+
+.text-olive-dark {
+  color: #666600;
+}
+
+.bg-olive-light {
+  background-color: #999900;
+}
+
+.bg-olive-dark {
+  background-color: #666600;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Custom hover effects */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -3px rgba(128, 128, 0, 0.1), 0 4px 6px -2px rgba(128, 128, 0, 0.05);
+}
+
+/* Gradient backgrounds */
+.gradient-cream-olive {
+  background: linear-gradient(135deg, #FFFDD0 0%, #F7F7E6 100%);
+}
+
+.gradient-olive-dark {
+  background: linear-gradient(135deg, #808000 0%, #666600 100%);
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDD0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #808000;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666600;
+}
+
+/* Focus states */
+button:focus,
+a:focus {
+  outline: 2px solid #808000;
+  outline-offset: 2px;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .responsive-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(128, 128, 0, 0.15);
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #FFFDD0;
+  border-top: 3px solid #808000;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #808000 0%, #666600 100%);
+  color: #FFFDD0;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #666600 0%, #4D4D00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(128, 128, 0, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #808000;
+  border: 2px solid #808000;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #808000;
+  color: #FFFDD0;
+  transform: translateY(-2px);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-olive-light {
+    color: #666600;
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added here if needed */
+}
